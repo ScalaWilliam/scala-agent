@@ -23,9 +23,51 @@ An Agent provides you with synchronous access to its data, whereas an Actor does
 By passing functions you don't need to create unnecessary case classes and type hierarchies, you just deal with it as 
 if were any simple synchronous code.
 
-```scala
-object Wat extends App {
 
+Agents are somewhat a dual to an actor - to Agents you pass functions and the state is public, to Actors you pass data and they have their own private state. Here's [an interesting read](http://michaelneale.blogspot.sg/2012/06/agents-and-actors-oh-my.html).
+
+
+Also [a couple of clojure agent examples](https://lethain.com/a-couple-of-clojure-agent-examples/).
+
+And a question [agents vs actors in clojure?](https://groups.google.com/d/msg/clojure/VuV_mi9m510/py7JSDoAP6IJ)
+
+Someone even [came up](https://www.chrisstucchio.com/blog/2014/agents.html) with [scalaz_agent](https://github.com/stucchio/scalaz_agent), though I'm not sure if it's definitely the same thing.
+
+Interesting read: is [Clojure better at concurrency than Scala?](https://www.quora.com/Is-Clojure-better-at-concurrency-than-Scala/answer/Gary-Verhaegen?srid=DB6V).
+
+Another one: [Making Sense of Clojure's Overlooked Agents](http://www.shayne.me/blog/2015/2015-09-14-clojure-agents/).. "our functions can operate ignorant of concurrency issues" sounds nice!
+
+Another way to think about it: your agent functions act directly on the state. This means that you have an unlimited interface to that state. Actors on the other hand limit the interface tightly - which is exactly why it's better for distribution than an agent is - since functions are much tougher to pass about than data. It's almost like an Agent could be better for a prototype.
+
+["actors in clojure - why not?" comment](http://www.dalnefre.com/wp/2010/06/actors-in-clojure-why-not/#comment-23).
+
+
+
+
+```scala
+import akka.agent.Agent
+import scala.concurrent.ExecutionContext.Implicits.global
+
+object ExampleAgent extends App {
+  sealed trait SomeState {
+    def include(input: Input): SomeState
+    def someValue: Value
+  }
+  object SomeState {
+  
+  }
+  val stateAgent = Agent(SomeState.initial)
+  
+  inParallel { input =>
+    stateAgent
+      .alter(_.include(input))
+      .map(_.someValue)
+      .foreach(println)
+  }
+  
+  every(2.seconds) {
+    println(stateAgent().someValue)
+  }
 
 }
 ```
