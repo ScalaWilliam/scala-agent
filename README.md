@@ -1,7 +1,24 @@
-# scala-agent
-Scala Akka Agents
+# Scala Agent
 
-...
+Akka's Agents are wonderful. 
+
+They effectively are concurrent `var`'s with asynchronous capabilities.
+
+But when do you use them? Great question! Consider using an Agent instead of an Actor:
+
+## Agent vs Actor
+
+A crucial difference between an Agent and an Actor is that an Actor receives data, whereas an Agent receives functions.
+
+An actor will change its own state based on the data that it receives.
+
+Whereas an Agent will change its data based on the function it receives.
+
+Both Actors and Agents have internal message queues.
+
+An Agent however is not capable of side effects unlike an Actor.
+
+An Agent provides you with synchronous access to its data, whereas an Actor does not.
 
 
 ```scala
