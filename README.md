@@ -21,3 +21,6 @@ object Wat extends App {
 - Demo from Akka in Action [for recording books sold](https://github.com/gilbutITbook/006877/blob/699a04504088b731ccce84a136af07b2cfb9f633/chapter-state/src/main/scala/aia/state/Agent.scala#L16)
 - Ovo tech but [not sure how](https://github.com/ovotech/comms-profiles/blob/ff8308f7b4c5dbcc422fd0a4737bf476f47150ae/src/main/scala/com/ovoenergy/comms/profiles/Main.scala#L40) (code by ex-guardian person... they love agents; that's where I learned them too)
 - For something in [an ethereum client](https://github.com/input-output-hk/etc-client/blob/2b9fec28ed83daab8ec46d45a2b70af55d34e222/src/main/scala/io/iohk/ethereum/network/ServerActor.scala)
+- Some state storage/event cache [for an analytics app](https://github.com/lancewf/narrative-analytics/blob/55cffc7a98db388694604b7a9031b02b5af57fdd/src/main/scala/com/finfrock/narrative_analytics/model/EventCache.scala)
+- Guardian using it [for some salesforce code](https://github.com/guardian/support-workers/blob/8d74dfaee2fb04e94a3f1a749d7a53dbaecb4930/common/src/main/scala/com/gu/salesforce/SalesforceService.scala)
+
