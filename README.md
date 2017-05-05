@@ -1,5 +1,7 @@
 # Scala Agent
 
+> My draft notes, for time being.
+
 Akka's Agents are wonderful. 
 
 They effectively are concurrent `var`'s with asynchronous capabilities.
