@@ -20,6 +20,8 @@ An Agent however is not capable of side effects unlike an Actor.
 
 An Agent provides you with synchronous access to its data, whereas an Actor does not.
 
+By passing functions you don't need to create unnecessary case classes and type hierarchies, you just deal with it as 
+if were any simple synchronous code.
 
 ```scala
 object Wat extends App {
