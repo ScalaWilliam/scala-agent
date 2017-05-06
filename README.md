@@ -1,6 +1,6 @@
 # Scala Agent
 
-> My draft notes, for time being.
+> My draft notes, for time being. [Edit on GitHub](https://github.com/ScalaWilliam/scala-agent/edit/master/README.md).
 
 Akka's Agents are wonderful. 
 
