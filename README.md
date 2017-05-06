@@ -2,7 +2,7 @@
 
 > My draft notes, for time being. [Edit on GitHub](https://github.com/ScalaWilliam/scala-agent/edit/master/README.md).
 
-Akka's Agents are wonderful. 
+[Akka Agents](http://doc.akka.io/docs/akka/2.5.0/scala/agents.html) are wonderful. Inspired by [Clojure Agents](https://clojure.org/reference/agents). Do not mix up with monitoring agents such as in this article "[Actor Vs Agent](http://wiki.c2.com/?ActorVsAgent)".
 
 They effectively are concurrent `var`'s with asynchronous capabilities.
 
